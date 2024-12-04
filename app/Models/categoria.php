@@ -12,6 +12,8 @@ class Categoria extends Model
 
     protected $table = 'categorias'; // Nombre de la tabla en la base de datos
     protected $primaryKey = 'ID_Categoria'; // Establece la llave primaria
+    public $incrementing = true; // Si es una clave auto incremental
+    protected $keyType = 'int'; // Tipo de la clave primaria
 
     protected $fillable = [
         'Nombre_CAT',

@@ -39,7 +39,7 @@ class ProveedorController extends Controller
         return view('proveedores.edit', compact('proveedor'));
     }
 
-    public function update(Request $request, proveedor $proveedor)
+    public function update(Request $request, Proveedor $proveedor)
     {
         $request->validate([
             'Nombre_PVD' => 'required|string',

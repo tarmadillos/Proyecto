@@ -75,7 +75,7 @@
         <tbody>
             @foreach($categorias as $categoria)
                 <tr>
-                    <td>{{ $categoria->ID_categoria }}</td>
+                    <td>{{ $categoria->ID_Categoria }}</td>
                     <td>{{ $categoria->Nombre_CAT }}</td>
                     <td>{{ $categoria->Descripcion_CAT }}</td>
 

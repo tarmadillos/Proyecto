@@ -77,9 +77,10 @@
         <tbody>
             @foreach($proveedores as $proveedores)
                 <tr>
-                    <td>{{ $proveedores->ID_proveedor }}</td>
+                    <td>{{ $proveedores->ID_Proveedor }}</td>
                     <td>{{ $proveedores->Nombre_PVD }}</td>
                     <td>{{ $proveedores->Contacto_PVD }}</td>
+                    <td>{{ $proveedores->Telefono_PVDContacto_PVD }}</td>
                     <td>{{ $proveedores->Email_PVD }}</td>
                     <td>
                         <a href="{{ route('proveedores.edit', $proveedores) }}" class="btn btn-warning btn-sm">Editar</a>

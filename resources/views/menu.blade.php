@@ -6,6 +6,7 @@
     <title>Menú Principal</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
 </head>
 <body>
 
@@ -46,14 +47,38 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('salidas.index') }}">Salida Material</a>
                     </li>
-                    <li class="nav-item">
+                    <!--<ul class="navbar-nav">
+                         Otros enlaces 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('reportes.baja-rotacion') }}">Baja Rotación</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('reportes.ventas') }}">Reporte de Ventas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('reportes.inventario') }}">Inventario Actual</a>
+                        </li>
+                    </ul>-->
+                    
+<li class="nav-item">
+    <a class="nav-link {{ request()->routeIs('reportes.baja-rotacion') ? 'active' : '' }}" href="{{ route('reportes.baja-rotacion') }}">Baja Rotación</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link {{ request()->routeIs('reportes.ventas') ? 'active' : '' }}" href="{{ route('reportes.ventas') }}">Reporte de Ventas</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link {{ request()->routeIs('reportes.inventario') ? 'active' : '' }}" href="{{ route('reportes.inventario') }}">Inventario Actual</a>
+</li>
+                
+
+                  <!--    <li class="nav-item">
                         <a class="nav-link" href="/inventario">Control de Inventario</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/reportes">Reportes / Informes</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link text-danger" href="/salir">Salir</a>
+                        <a class="nav-link text-danger" href="/salir">Salir</a> 
                     </li>
                 </ul>
             </div>

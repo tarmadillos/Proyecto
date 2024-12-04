@@ -35,7 +35,7 @@ class CategoriaController extends Controller
         return view('categorias.edit', compact('categoria'));  // Formulario de edición
     }
 
-    public function update(Request $request, categoria $categoria)
+    public function update(Request $request, Categoria $categoria)
     {
         $request->validate([
             'Nombre_CAT' => 'required|string',

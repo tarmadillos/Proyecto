@@ -2,13 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InventarioController;
-use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\ProyectoController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\EntradaController;
 use App\Http\Controllers\SalidaController;
+use App\Http\Controllers\ReporteController;
 
 Route::resource('entradas', EntradaController::class);
 
@@ -105,3 +105,12 @@ Route::post('/salidas', [SalidaController::class, 'store'])->name('salidas.store
 Route::get('/salidas/{salida}/edit', [SalidaController::class, 'edit'])->name('salidas.edit');
 Route::put('/salidas/{salida}', [SalidaController::class, 'update'])->name('salidas.update');
 Route::delete('/salidas/{salida}', [SalidaController::class, 'destroy'])->name('salidas.destroy');
+
+
+Route::get('reportes/baja-rotacion', [ReporteController::class, 'reporteBajaRotacion'])->name('reportes.baja-rotacion');
+Route::get('reportes/ventas', [ReporteController::class, 'reporteVentas'])->name('reportes.ventas');
+Route::post('reportes/ventas', [ReporteController::class, 'generarReporteVentas'])->name('reportes.generar-ventas');
+Route::get('reportes/inventario', [ReporteController::class, 'reporteInventario'])->name('reportes.inventario');
+
+Route::get('reportes/baja-rotacion/pdf', [ReporteController::class, 'exportarBajaRotacionPDF'])->name('reportes.baja-rotacion-pdf');
+Route::get('reportes/baja-rotacion/excel', [ReporteController::class, 'exportarBajaRotacionExcel'])->name('reportes.baja-rotacion-excel');

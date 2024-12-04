@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\entrada;
-use App\Models\Producto;
-use App\Models\Proveedor;
+use App\Models\producto;
+use App\Models\proveedor;
 use Illuminate\Http\Request;
 
 class EntradaController extends Controller
