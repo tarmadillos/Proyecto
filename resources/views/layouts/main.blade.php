@@ -10,9 +10,9 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top"> 
         <div class="container justify-content-center">
-            <a class="navbar-brand" href="#">Autenticarse</a>
+            <!-- <a class="navbar-brand" href="#">Autenticarse</a> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,6 +29,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('categorias.index') }}">Categorias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('entradas.index') }}">Entrada Material</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('salidas.index') }}">Salida Material</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/inventario">Control de Inventario</a>

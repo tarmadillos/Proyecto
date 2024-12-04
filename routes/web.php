@@ -1,12 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\InventarioController;
-use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\ProyectoController;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\EntradaController;
+use App\Http\Controllers\SalidaController;
+
+Route::resource('entradas', EntradaController::class);
 
 /*Route::get('/', function () {
     return view('welcome');
@@ -45,27 +49,25 @@ Route::get('/productos', [ProductoController::class, 'index'])->name('productos.
 // Ruta para Categorias
 Route::get('/categorias', [CategoriaController::class, 'index'])->name('categoria.index');
 
+// Ruta para Entradas
+Route::get('/entradas', [EntradaController::class, 'index'])->name('entradas.index');
+Route::resource('entradas', EntradaController::class);
+
+Route::get('/salidas', [EntradaController::class, 'index'])->name('entradas.index');
+Route::resource('salidas', EntradaController::class);
+
 // Ruta para Control de Inventario
-Route::get('/inventario', [InventarioController::class, 'index'])->name('inventario.index');
+Route::get('/inventario', [InventarioController::class, 'index'])->name('inventario.index');//
 
 // Ruta para Reportes / Informes
 Route::get('/reportes', [ReporteController::class, 'index'])->name('reportes.index');
+
 
 // Ruta para Salir
 Route::get('/salir', function () {
     return redirect('/'); // Regresa al inicio o implementa lógica de logout
 })->name('menu.salir');
 
-
-
-/*
-Route::get('/', [ProductoController::class, 'index'])->name('productos.index');
-Route::get('/productos/create', [ProductoController::class, 'create'])->name('productos.create');
-Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
-Route::get('/productos/{producto}/edit', [ProductoController::class, 'edit'])->name('productos.edit');
-Route::put('/productos/{producto}', [ProductoController::class, 'update'])->name('productos.update');
-Route::delete('/productos/{producto}', [ProductoController::class, 'destroy'])->name('productos.destroy');
-*/
 
 
 Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
@@ -89,3 +91,17 @@ Route::post('/proveedores', [ProveedorController::class, 'store'])->name('provee
 Route::get('/proveedores/{proveedor}/edit', [ProveedorController::class, 'edit'])->name('proveedores.edit');
 Route::put('/proveedores/{proveedor}', [ProveedorController::class, 'update'])->name('proveedores.update');
 Route::delete('/proveedores/{proveedor}', [ProveedorController::class, 'destroy'])->name('proveedores.destroy');
+
+Route::get('/entradas', [EntradaController::class, 'index'])->name('entradas.index');
+Route::get('/entradas/create', [EntradaController::class, 'create'])->name('entradas.create');
+Route::post('/entradas', [EntradaController::class, 'store'])->name('entradas.store');
+Route::get('/entradas/{entrada}/edit', [EntradaController::class, 'edit'])->name('entradas.edit');
+Route::put('/entradas/{entrada}', [EntradaController::class, 'update'])->name('entradas.update');
+Route::delete('/entradas/{entrada}', [EntradaController::class, 'destroy'])->name('entradas.destroy');
+
+Route::get('/salidas', [SalidaController::class, 'index'])->name('salidas.index');
+Route::get('/salidas/create', [SalidaController::class, 'create'])->name('salidas.create');
+Route::post('/salidas', [SalidaController::class, 'store'])->name('salidas.store');
+Route::get('/salidas/{salida}/edit', [SalidaController::class, 'edit'])->name('salidas.edit');
+Route::put('/salidas/{salida}', [SalidaController::class, 'update'])->name('salidas.update');
+Route::delete('/salidas/{salida}', [SalidaController::class, 'destroy'])->name('salidas.destroy');

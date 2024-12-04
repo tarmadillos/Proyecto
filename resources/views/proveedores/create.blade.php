@@ -1,14 +1,14 @@
 @extends('layouts.main')
 
-@section('title', 'Agregar Producto')
+@section('title', 'Agregar Proveedor')
 
 @section('content')
-    <h1>Agregar Producto</h1>
+    <h1>Agregar Proveedor</h1>
     <form action="{{ route('proveedores.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="Nombre_PVD" class="form-label">Nombre</label>
-            <input type="text" name="Descripcion_PDT" class="form-control" id="Nombre_PVD" required>
+            <input type="text" name="Nombre_PVD" class="form-control" id="Nombre_PVD" required>
         </div>
         <div class="mb-3">
             <label for="Contacto_PVD" class="form-label">Contacto</label>
@@ -23,6 +23,6 @@
             <input type="text" step="0.01" name="Email_PVD" class="form-control" id="Email_PVD" required>
         </div>
        
-        <button type="submit" class="btn btn-success">Guardar Producto</button>
+        <button type="submit" class="btn btn-success">Guardar Proveedor</button>
     </form>
 @endsection
