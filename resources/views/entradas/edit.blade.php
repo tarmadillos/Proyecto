@@ -25,7 +25,7 @@
             <select class="form-select" id="ID_Proveedor" name="ID_Proveedor" required>
                 @foreach($proveedores as $proveedor)
                     <option value="{{ $proveedor->ID_Proveedor }}" {{ $proveedor->ID_Proveedor == $entrada->ID_Proveedor ? 'selected' : '' }}>
-                        {{ $proveedor->nombre }}
+                        {{ $proveedor->Nombre_PVD }}
                     </option>
                 @endforeach
             </select>

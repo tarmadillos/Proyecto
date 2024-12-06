@@ -24,7 +24,7 @@
                 <tr>
                     <td>{{ $entrada->ID_Entrada }}</td>
                     <td>{{ $entrada->producto->Descripcion_PDT ?? 'Sin Producto' }}</td>
-                    <td>{{ $entrada->proveedor->nombre ?? 'Sin Proveedor' }}</td>
+                    <td>{{ $entrada->proveedor->Nombre_PVD ?? 'Sin Proveedor' }}</td>
                     <td>{{ $entrada->Cantidad_ENT }}</td>
                     <td>{{ $entrada->Fecha_Entrada_ENT }}</td>
                     <td>{{ $entrada->Numero_Factura_ENT }}</td>

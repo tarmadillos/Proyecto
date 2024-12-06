@@ -36,7 +36,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('salidas.index') }}">Salida Material</a>
                     </li>
-                    <!--<ul class="navbar-nav">
+                <!--<ul class="navbar-nav">
                          Otros enlaces 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('reportes.baja-rotacion') }}">Baja Rotación</a>
@@ -49,15 +49,15 @@
                         </li>
                     </ul>-->
 
-<li class="nav-item">
-    <a class="nav-link {{ request()->routeIs('reportes.baja-rotacion') ? 'active' : '' }}" href="{{ route('reportes.baja-rotacion') }}">Baja Rotación</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link {{ request()->routeIs('reportes.ventas') ? 'active' : '' }}" href="{{ route('reportes.ventas') }}">Reporte de Ventas</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link {{ request()->routeIs('reportes.inventario') ? 'active' : '' }}" href="{{ route('reportes.inventario') }}">Inventario Actual</a>
-</li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('reportes.baja-rotacion') ? 'active' : '' }}" href="{{ route('reportes.baja-rotacion') }}">Baja Rotación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('reportes.ventas') ? 'active' : '' }}" href="{{ route('reportes.ventas') }}">Reporte de Ventas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('reportes.inventario') ? 'active' : '' }}" href="{{ route('reportes.inventario') }}">Inventario Actual</a>
+                    </li>
                 
 
                 <!--<li class="nav-item">

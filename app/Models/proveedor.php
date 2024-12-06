@@ -10,8 +10,10 @@ class proveedor extends Model
 {
     use HasFactory;
 
-    protected $table = 'proveedores';
-    protected $primaryKey = 'ID_Proveedor';
+    protected $table = 'proveedores'; // Nombre de la tabla
+    protected $primaryKey = 'ID_Proveedor'; // Llave primaria
+    public $incrementing = true; // Clave auto-incremental
+    protected $keyType = 'int'; // Tipo de dato de la clave primaria
     
     protected $fillable = [
         'Nombre_PVD',

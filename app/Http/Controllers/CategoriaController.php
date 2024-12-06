@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\categoria;
 use Illuminate\Http\Request;
 
-
 class CategoriaController extends Controller
+
 {
     public function index()
     {
-        $categorias = Categoria::all();  // Obtener todas las categorías
+        $categorias = categoria::all();  // Obtener todas las categorías
         return view('categorias.index', compact('categorias'));
     }
 

@@ -16,7 +16,8 @@ class ProveedorController extends Controller
 
     public function create()
     {
-        return view('proveedores.create');
+        $proveedores = Proveedor::all();
+        return view('proveedores.create'); // Mostrar formulario de creación
     }
 
     public function store(Request $request)
@@ -30,12 +31,14 @@ class ProveedorController extends Controller
            
         ]);
 
-        proveedor::create($request->all());
+        proveedor::create($request->all()); // Guardar el proveedor
         return redirect()->route('proveedores.index');
     }
 
     public function edit(proveedor $proveedor)
     {
+        //$proveedor = proveedor::findOrFail($id); // Encuentra el producto por su ID
+        //$proveedores = Proveedor::all();
         return view('proveedores.edit', compact('proveedor'));
     }
 
@@ -48,9 +51,17 @@ class ProveedorController extends Controller
             'Email_PVD' =>'required|string',
         ]);
 
+        // $proveedor = Proveedor::findOrFail($id);
+        /*$proveedor->update([
+            'Nombre_PVD' => $request->Nombre_PVD,
+            'Contacto_PVD' => $request->Contacto_PVD,
+            'Telefono_PVD' => $request->Telefono_PVD,
+            'Email_PVD' => $request->Email_PVD,
+        ]);*/
 
         $proveedor->update($request->all());
-        return redirect()->route('proveedores.index');
+        return redirect()->route('proveedores.index')->with('success', 'Proveedor actualizado correctamente');
+     
     }
 
     public function destroy(proveedor $proveedor)

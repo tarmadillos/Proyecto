@@ -15,6 +15,12 @@ class Categoria extends Model
     public $incrementing = true; // Si es una clave auto incremental
     protected $keyType = 'int'; // Tipo de la clave primaria
 
+        // Definir la relación inversa con el modelo Producto
+        public function productos()
+        {
+            return $this->hasMany(Producto::class, 'ID_categoria');
+        }
+
     protected $fillable = [
         'Nombre_CAT',
         'Descripcion_CAT',
